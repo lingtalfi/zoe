@@ -154,3 +154,27 @@ jSearch.on('keyup.gui', zoe.inst().utils.debounce(function () {
 }, 250));
 
 ```
+
+
+
+
+
+
+
+
+
+
+History Log
+------------------
+    
+- 1.0.0 -- 2018-06-07
+
+    - initial commit
+    
+
+
+
+
+
+
+
