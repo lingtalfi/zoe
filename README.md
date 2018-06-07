@@ -167,6 +167,10 @@ jSearch.on('keyup.gui', zoe.inst().utils.debounce(function () {
 History Log
 ------------------
     
+- 1.0.1 -- 2018-06-07
+
+    - fix instance var=null error
+
 - 1.0.0 -- 2018-06-07
 
     - initial commit
