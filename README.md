@@ -4,7 +4,7 @@ Zoe
 
 
 
-A minimal js to work with ajax related events.
+A minimal js utility to work with ajax related events.
 It's designed to work with [ecp](https://github.com/lingtalfi/Ecp) requests.
 
 
