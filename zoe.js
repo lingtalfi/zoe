@@ -233,7 +233,6 @@
                 }
             },
             utils: {
-                request: request,
                 sqlDateToFormat: function (sqlDate, format, sep) {
                     if ('undefined' === typeof sep) {
                         sep = '/';
@@ -264,6 +263,7 @@
                     return debounce(func, wait, immediate);
                 }
             },
+            request: request,
             // observer
             on: function (eventName, cb) {
                 obs.addListener(eventName, cb);
