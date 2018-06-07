@@ -8,7 +8,7 @@
      */
     if ('undefined' === typeof window.zoe) {
 
-        var zoe = null;
+        var zoeInst = null;
 
 
         /**
@@ -20,7 +20,6 @@
         window.zoeIntent = null;
         window.zoeRequestOnSuccessAfter = null;
 
-        var instance = null;
         //----------------------------------------
         // UTILS
         //----------------------------------------
@@ -33,7 +32,7 @@
          *          - ?onPublicError
          */
         var request = function (target, data, onSuccess, options, type) {
-            var zis = instance;
+            var zis = zoeInst;
 
             // intent implementation
             var intent = window.zoeIntent; // this should be an array
@@ -48,9 +47,9 @@
                 onSuccessMessage: null
             }, options);
 
-            var onInvalidError = options.onInvalidError || instance.hooks.onRequestInvalidError;
-            var onPublicError = options.onPublicError || instance.hooks.onRequestPublicError;
-            var onSuccessMessage = options.onSuccessMessage || instance.hooks.onRequestSuccessMessage;
+            var onInvalidError = options.onInvalidError || zoeInst.hooks.onRequestInvalidError;
+            var onPublicError = options.onPublicError || zoeInst.hooks.onRequestPublicError;
+            var onSuccessMessage = options.onSuccessMessage || zoeInst.hooks.onRequestSuccessMessage;
 
 
             var p = target.split(":", 2);
@@ -232,6 +231,9 @@
 
                 }
             },
+            hello: function () {
+                console.log("zoe says hello");
+            },
             utils: {
                 sqlDateToFormat: function (sqlDate, format, sep) {
                     if ('undefined' === typeof sep) {
@@ -293,10 +295,10 @@
         //----------------------------------------
         window.zoe = {
             inst: function () {
-                if(null===zoe){
-                    zoe = new zoeJsApi();
+                if (null === zoeInst) {
+                    zoeInst = new zoeJsApi();
                 }
-                return zoe;
+                return zoeInst;
             }
         };
     }
